@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Audio player</title>
+<style type="text/css">
+	body{
+		padding: 0;
+		margin: 0;
+		background-image:  linear-gradient(rgba(30,45,65,0.9),rgba(40,56,70,0.9)),url(images/img.jpg);
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		width: 100%;
+		height: 100vh;
+	}
+	.img{
+		width: 450px;
+		height: 450px;
+		position: absolute;
+		top: 15%;
+		left: 33%;
+		background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(pic/back5.jpg);
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		border-radius: 100%;
+	}
+	#myAudio{
+		position: absolute;
+		margin-top: 45%;
+		margin-left: 17%;
+	}
+	
+</style>
+</head>
+<body>
+<div class="img">
+	 <audio id="myAudio" src=mus1.mp3 controls autoplay style="background:transparent;"></audio>
+<a onClick="togglePlay()"class="play"></a>
+</div>
+ <script type="text/javascript">
+var myAudio = document.getElementById("myAudio");
+var isPlaying = false;
+
+function togglePlay() {
+  if (isPlaying) {
+    myAudio.pause()
+  } else {
+    myAudio.play();
+  }
+};
+myAudio.onplaying = function() {
+  isPlaying = true;
+};
+myAudio.onpause = function() {
+  isPlaying = false;
+};</script>
+</body>
+</html>

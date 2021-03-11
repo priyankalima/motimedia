@@ -1,0 +1,29 @@
+(function () {
+  if ('Discourse' in window && typeof Discourse._registerPluginCode === 'function') {
+    var __theme_name__ = "Unformatted Code Detector";
+    var settings = Discourse.__container__.lookup("service:theme-settings").getObjectForTheme(18);
+    var themePrefix = function themePrefix(key) {
+      return 'theme_translations.18.' + key;
+    };
+
+    Discourse._registerPluginCode('0', function (api) {
+      try {
+        /* Translation data for theme 18 (en)*/
+        var data = { "en": { "warning_modal": { "title": "Unformatted Code Warning", "content": 'It looks like your post may contain unformatted code. To make it readable, make sure to wrap your code in backticks using the <kbd>`</kbd> key on your keyboard. (<a target="_blank" rel="noopener noreferrer" href="https://superuser.com/a/254077">Where?</a>)\n\n**Single-line**: `` `like this` ``\n\n**Multiline**:\n````markdown\n```\nlike\nthis\n```\n````\n', "do_not_show_again": "Don’t show this message again.", "fix_post": "Fix Code", "ignore_and_post_anyway": "Post Anyway" } } };
+
+        for (var lang in data) {
+          var cursor = I18n.translations;
+          var _arr = [lang, "js", "theme_translations"];
+          for (var _i = 0; _i < _arr.length; _i++) {
+            var key = _arr[_i];
+            cursor = cursor[key] = cursor[key] || {};
+          }
+          cursor[18] = data[lang];
+        }
+      } catch (err) {
+        var rescue = require("discourse/lib/utilities").rescueThemeError;
+        rescue(__theme_name__, err, api);
+      }
+    });
+  }
+})();

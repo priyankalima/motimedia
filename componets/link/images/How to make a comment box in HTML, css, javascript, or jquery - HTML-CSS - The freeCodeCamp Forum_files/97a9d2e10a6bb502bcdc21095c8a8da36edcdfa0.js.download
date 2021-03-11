@@ -1,0 +1,70 @@
+(function() {
+  if ('Discourse' in window && Discourse.__container__) {
+    Discourse.__container__
+      .lookup("service:theme-settings")
+      .registerSettings(23, {"trust_level_flair_position":"bottom-right","group_flair_always_on_top":true,"use_font_awesome":true,"font_awsome_color":"#ffffff","font_awsome_background_color":"#006400","new_user_flair_icon":"","basic_user_flair_icon":"","member_flair_icon":"","regular_flair_icon":"","leader_flair_icon":"fa-shield"});
+  }
+})();
+(function() {
+  if ('Ember' in window) {
+    Ember.TEMPLATES["/connectors/user-card-avatar-flair/user-card-avt"] = Ember.HTMLBars.template({"id":null,"block":"{\"symbols\":[],\"statements\":[[0,\"\\n  \"],[1,[29,\"mount-widget\",null,[[\"widget\",\"args\"],[\"trust-level-avatar-flair\",[29,\"hash\",null,[[\"model\"],[[25,[\"user\"]]]]]]]],false],[0,\"\\n\"]],\"hasEval\":false}","meta":{}});
+  }
+})();
+(function() {
+  if ('Ember' in window) {
+    Ember.TEMPLATES["/connectors/user-profile-avatar-flair/user-profile-avt"] = Ember.HTMLBars.template({"id":null,"block":"{\"symbols\":[],\"statements\":[[0,\"\\n  \"],[1,[29,\"mount-widget\",null,[[\"widget\",\"args\"],[\"trust-level-avatar-flair\",[29,\"hash\",null,[[\"model\"],[[25,[\"model\"]]]]]]]],false],[0,\"\\n\"]],\"hasEval\":false}","meta":{}});
+  }
+})();
+(function () {
+  if ('Discourse' in window && typeof Discourse._registerPluginCode === 'function') {
+    var __theme_name__ = "Trust Level Avatar Flair";
+    var settings = Discourse.__container__.lookup("service:theme-settings").getObjectForTheme(23);
+    var themePrefix = function themePrefix(key) {
+      return 'theme_translations.23.' + key;
+    };
+
+    Discourse._registerPluginCode('0.8.18', function (api) {
+      try {
+        var _require = require("discourse-common/lib/icon-library"),
+            iconNode = _require.iconNode,
+            convertIconClass = _require.convertIconClass;
+
+        var h = require("virtual-dom").h;
+        var trustIcons = [settings.new_user_flair_icon, settings.basic_user_flair_icon, settings.member_flair_icon, settings.regular_flair_icon, settings.leader_flair_icon];
+
+        // Needed for embedded posts when they aren't already loaded into the post stream
+        api.includePostAttributes('trust_level');
+
+        api.createWidget("trust-level-avatar-flair", {
+          tagName: "div.tl-avatar-flair",
+
+          html: function html(attrs) {
+            var user = attrs.model;
+            var trustLevel = user.trust_level;
+            var trustLevelIcon = trustIcons[trustLevel];
+            var trustName = Discourse.Site.currentProp("trustLevels").findBy("id", trustLevel).name;
+
+            if (trustLevelIcon.includes("fa-")) {
+              var covertedIcon = convertIconClass(trustLevelIcon);
+              return h("div.tl-" + trustLevel + ".tl-flair", { title: trustName }, [iconNode(covertedIcon)]);
+            } else {
+              return h("div.tl-" + trustLevel + ".tl-flair", { title: trustName });
+            }
+          }
+        });
+
+        api.decorateWidget("post-avatar:after", function (helper) {
+          var trustLevel = helper.getModel().get("trust_level");
+          var attrs = { model: { trust_level: trustLevel } };
+
+          if (trustLevel) {
+            return helper.widget.attach("trust-level-avatar-flair", attrs);
+          }
+        });
+      } catch (err) {
+        var rescue = require("discourse/lib/utilities").rescueThemeError;
+        rescue(__theme_name__, err, api);
+      }
+    });
+  }
+})();

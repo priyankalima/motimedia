@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>motivational coach</title>
+
+	<link rel="stylesheet" type="text/css" href="animate.css">
+	  <link rel="stylesheet" href="css/uikit.min.css" />
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  
+    <script src="moti/js/modernizr.js"></script>
+        <script src="js/uikit.min.js"></script>
+        <script src="js/uikit-icons.min.js"></script>
+        
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin:0;
+			background-color: rgb(45,45,34);
+			padding-top: 7%;
+			padding-bottom: 7%;
+			font-family: monospace;
+		}
+		.container{
+			width: 1200px;
+			margin: auto;
+			background-color: white;
+			height: 100%;
+			box-shadow: 0 0 60px black;
+		}
+		.header{
+			background-image:linear-gradient(rgba(30,40,50,0.5),rgba(34,56,45,0.5)),url(images/back01.jpg);
+			background-size: cover;
+			background-position:center center;
+			width: 100%;
+			height: 100vh;
+		}
+		.section{
+			width: 100%;
+			height: 120vh;
+			background-image:linear-gradient(rgba(34,56,45),rgba(45,40,60)),url(images/back01.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			padding-top: 2%;
+		}
+		h2
+		{
+			transform: translate(-50%,-50%);
+			letter-spacing: 2px;
+			color: transparent;
+			position: absolute;
+			left: 50%;
+			top: 10%;
+			text-align: center;
+font-size: 26px;
+		}
+		h2:before
+		{
+			content: attr(data-text);
+			position: absolute;
+			top: 0
+			left:0;
+			width:100%;
+			
+			color: white;
+			overflow: hidden;
+			border-right: 1px solid black;
+			animation: type 10s linear infinite;
+			white-space: nowrap;
+		}
+		@keyframes type{
+			0%
+			{
+				width: 0%;
+			}
+			50%
+			{
+				width: 100%;
+			}
+			100%
+			{
+				width:0%;
+			}
+		}
+		.left-tab{
+			position: absolute;
+			top: 10px;
+			left: 75px;
+			
+		}
+		.link{
+			color: white;
+			font-size: 30px;
+			
+		}
+		.link:hover{
+			color: #555;
+		}
+		.right-tab{
+			position: absolute;
+			right: 0;
+			top: 15px;
+			padding-right: 70px;
+		}
+		.quotes{
+	overflow: hidden;
+	background-color:rgb(34,86,56);
+	padding: 30px;
+	position: absolute;
+	margin-top: 20%;
+	left: 0;
+	width: 900px;
+	height: 20vh;
+	border-radius: 0 10px 10px 0;
+}
+.border{
+width: 700px;
+margin: auto;
+height: 90vh;
+border:1px solid  rgb(34,34,45);	
+border-radius: 0 60px 0 60px;
+background-color: rgb(34,34,45);
+box-shadow: 0 0 10px black;
+}
+.list{
+          padding-left: 90px; 
+          color: white; 
+          font-family: cursive;
+          font-size: 14px;
+         padding-top: 60px;
+          float: left;
+
+		}
+.img{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	left:20%; 
+}
+.vid-container{
+			width: 1000px;
+			margin: auto;
+			padding-top: 20px;
+		}
+		.h4{
+			background-image: linear-gradient(rgba(30,56,34,0.5),rgba(0,0,0,0.9)),url(pic/back05.gif);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+			margin-top: 10%;
+			height: 90vh;
+			box-shadow: 0 0 20px -5px black;
+			border-radius: 5px;
+		}
+		.h5	{
+			background-image: linear-gradient(rgba(30,56,34,0.5),rgba(0,0,0,0.9)),url(pic/back03.gif);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+			margin-top: 10%;
+			height: 90vh;
+			box-shadow: 0 0 20px -5px black;
+			border-radius: 5px;
+
+		}
+		.fonts{
+			margin: auto;
+			width: 500px;
+           text-align: center;
+           margin-top: 100px;
+
+
+		}
+		.fa-play{
+			color: white;
+            padding: 10px;
+            border-radius: 60px;
+            margin: 10px;
+            font-weight: 10;
+            font-size: 30px;
+
+		}
+		.fa-music{
+			color: white;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 60px;
+            margin: 10px;
+            font-weight: 10;
+
+		}
+			
+		.fa-thumbs-up{
+			color: white;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 60px;
+             margin: 10px;
+		}
+		.fa-thumbs-up:hover{
+			color: green;
+		}
+		.fa-thumbs-down{
+			color: white;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 60px;
+             margin: 10px;
+		}
+		.fa-thumbs-down:hover{
+			color: red;
+		}
+		.fa-download{
+			 margin: 10px;
+			color: white;
+            background-color:#333;
+            padding: 10px;
+            border-radius: 60px;
+		}
+		.fa-download:hover{
+			color: blue;
+		}
+		.vid{
+	width: 700px;
+position: absolute;
+left: 24%;
+margin-top: 50px;
+border-radius: 10px;
+box-shadow:0 0 30px black;
+
+
+}
+
+.audio{
+	width: 100%;
+	height: 80vh;
+	background-image: linear-gradient(rgba(30,56,34,0.5),rgba(0,0,0,0.9)),url(pic/back03.gif);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin-top: 149px;
+	 box-shadow: 0 0 30px -10px black;
+	
+	}
+	.pic{
+		position: absolute;
+left: 24%;
+margin-top: 50px;
+		height: 60vh;
+		width: 700px;
+      background-image:url(pic/pic03.jpg);
+     background-size: cover;
+      border-radius:  10px ;
+      box-shadow: 0 0 30px -10px black;
+
+      
+	}
+	.section1{
+		width: 100%;
+		height: 100%;
+		background-color: rgb(34,45,45);
+		padding-bottom: 80px;
+	}
+	.fa-play{
+		margin-top: 25%;
+		margin-left: 50%;
+	}
+	.fa-play:hover{
+     color:#555;
+	}
+	.section2{
+		background-color:white;
+		width: 1200px;
+		height: 450vh;
+		margin:auto;
+      
+	}
+
+		.left-side2{
+			width: 62%;
+			height: 300px;
+			padding: 10px;
+			float: left;
+			margin: 10px;
+          border:1px solid black;
+ border-radius: 10px;
+
+
+		}
+		.right-side2{
+			width: 30%;
+			height: 300px;
+			padding: 10px;
+			float: left;
+			margin: 10px;
+			 border:1px solid black;
+ border-radius: 10px;
+
+		}
+		.sub-container{
+			width: 1200px;
+			margin: auto;
+			margin-left: 60px;
+		}
+		
+		.title2{
+			
+			padding: 30px;
+           font-size: 50px;
+           text-align: center;
+           color:rgb(34,54,23);
+
+		}
+		
+		.section3{
+			width: 1200px;
+			height: 100vh;
+			margin: auto;
+			background-color:rgb(45,56,45);
+		}
+
+		.left-side0{
+			width: 20%;
+			height: 300px;
+			padding: 10px;
+			float: left;
+			margin: 10px;
+			border:1px solid black;
+             border-radius: 10px;
+
+
+		}
+		.right-side0{
+			width: 62%;
+			height: 300px;
+			padding:10px;
+			float: left;
+			margin: 10px;
+			border:1px solid black;
+             border-radius: 10px;
+
+		}
+		.left-side3{
+			width: 20%;
+			height: 300px;
+			padding: 10px;
+			float: left;
+			margin: 10px;
+			border:1px solid black;
+             border-radius: 10px;
+
+		}
+		h1{
+			font-size: 20px;
+			text-align: center;
+			padding: 5px;
+			color: rgb(34,34,34);
+			font-family: monospace;
+		}
+		.slideshow-container {
+  position:relative;
+  background:transparent;
+ 
+  color: white;
+}
+.play{
+	position: absolute;
+	margin-top: 100px;
+	margin-left: 230px;
+
+}
+
+.pause{
+	background-image: url(images/button1.png);
+	background-size: cover;
+	padding: 20px;
+}
+
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 50px;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: navy;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 60px ;
+  user-select: none;
+ 
+}
+.next {
+  position: absolute;
+  right: 10pc;
+  border-radius: 60px;
+}
+.prev{
+	 position: absolute;
+  left: 10pc;
+ 
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color:navy;
+  color: white;
+  text-decoration: none;
+}
+
+/* The dot/bullet/indicator container */
+
+
+/* Add a background color to the active dot/circle */
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+/* Add a blue color to the author */
+.author {color: cornflowerblue;}
+.img-container{
+	width: 700px;
+	margin: auto;
+	background-image: linear-gradient(rgba(40,34,67,0.9),rgba(40,34,67,0.9)),url(images/back4.jpg);
+	background-size: cover;
+	background-position: center;
+	height: 60vh;
+	box-shadow: 0 0 10px black;
+	border-radius: 60px 0 60px 0;
+}
+input[type=checkbox] {
+	clear: both;
+	display: none;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + label {
+	position: absolute;
+	z-index: 100;
+	overflow: hidden;
+	height: 8em;
+	width: 8em;
+	left: 50pc;
+	margin-top: 30px;
+	display: block;
+	text-align: center;
+	line-height: 9em;
+	cursor: pointer;
+	-webkit-transition: all 300ms ease;
+	transition: all 300ms ease;
+	border-radius: 50%;
+	
+}
+
+input[type="checkbox"] + label:before {
+	content: '';
+	z-index: -1;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	top: 0;
+	left: 0;
+	transform: scale(0);
+	-webkit-ransform: scale(0);
+}
+
+input[type="checkbox"] + label:after {
+	content: '';
+	z-index: -1;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	top: 0;
+	left: 0;
+	transform: scale(0);
+	-webkit-transform: scale(0);
+}
+
+input[type="checkbox"]:checked + label svg {
+	-webkit-transition: all 300ms ease-in-out;
+	transition: all 300ms ease-in-out;
+	fill: rgb(220, 72, 127);
+	transform: scale(1.3);
+	-webkit-transform: scale(1.3);
+}
+
+input[type="checkbox"]:checked + label:after {
+	-webkit-animation: like-a 0.3s 0.2s forwards;
+	-moz-animation: like-a 0.3s 0.2s forwards;
+	animation: like-a 0.3s 0.2s forwards;
+}
+
+input[type="checkbox"]:checked + label:before {
+	-webkit-animation: like-a 0.5s 0s forwards;
+	-moz-animation: like-a 0.5s 0s forwards;
+	animation: like-a 0.5s 0s forwards;
+}
+
+label svg {
+	display: inline-flex;
+	vertical-align: middle;
+	width: 100px;
+	fill: rgb(167, 167, 167);
+}
+
+
+
+a {
+  text-decoration: none;
+  color: rgb(220, 72, 127);
+}
+
+a:hover {
+  transition: none;
+ 
+}
+
+@-webkit-keyframes like-a {
+100% {
+	-webkit-transform:scale(1.03);
+	transform:scale(1.03);
+	-moz-transform:scale(1.03);
+} }
+@-moz-keyframes like-a {
+100% {
+	-webkit-transform:scale(1.03);
+	transform:scale(1.03);
+	-moz-transform:scale(1.03);
+} }
+@keyframes like-a {
+100% {
+	-webkit-transform:scale(1.03);
+	transform:scale(1.03);
+	-moz-transform:scale(1.03);
+} }
+.section4{
+	width: 100%;
+	height: 100vh;
+	margin: auto;
+	padding-top: 10%;
+    background-image:linear-gradient(rgba(4, 21, 40 ,0.9),rgba(4, 21, 40 ,0.9)),url(pic/pic6.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.mas-border{
+	width: 700px;
+	margin: auto;
+	height: 55vh;
+	background-color:rgb( 4, 21, 40 ) ;
+	border:1px solid rgb(4, 21, 40 );
+}
+
+.mess-box{
+	margin: 10px;
+	width: 50%;
+	border-radius: 10px;
+	float: left;
+	padding-top: 20px;
+	
+	
+}
+.like-box{
+	margin: 10px;
+	width: 35%;
+	height: 200px;
+	border-radius: 10px;
+	float: left;
+	margin-top: 75px;
+	margin-left: 45px;
+	background-color: rgb(34,45,56);
+
+}
+
+.mess{
+	width:300px;
+	padding: 10px;
+	margin: 5px;
+	height: 180px;
+	margin-left: 10px;
+	border-radius: 10px;
+	background-color: rgb(34,45,56);
+	border: none;
+	color: white;
+	margin-top: 20px;
+	margin-left: 25px;
+}
+.text1{
+	width: 100px;
+	height: 100px;
+	border-radius: 60px;
+	padding: 10px;
+	color: white;
+	margin: 5px;
+	margin-left: 19pc;
+	background-color: rgb( 34, 21, 40 );
+	border:none;
+	margin-top: 20px;
+}
+.right-quote{
+	background-color:rgb(34,56,86);
+	padding: 30px;
+	position: absolute;
+	right: 0;
+	width: 900px;
+	height: 20vh;
+	border-radius:  10px 0 0 10px ;
+	margin-top: 20%;
+}
+.section5{
+	width: 100%;
+	height: 100vh;
+	background-image:linear-gradient(rgba(45,40,60,0.5),rgba(34,56,45,0.5)),url(pic/gif1.gif);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.down-text{
+	width: 700px;
+	position: absolute;
+	margin-top: 53%;
+	margin-left: 20%;
+}
+audio{
+	margin-top: 11pc;
+	margin-left: 13pc;
+}
+</style>
+</head>
+<body>
+	<div class="left-tab  ">
+		
+		<a class="link" href="index.html"><i class="fa fa-home"></i></a>
+	</div>
+	<div class="right-tab">
+			<a class="link" href="gk/index.html"><img src="pic/gif01.gif" width="150" height="150"></a>
+
+		</div>
+<div class="container">
+	<div class="header">
+		 <h2 data-text="WELCOME!!! " style="position: absolute;top: 40px;"> WELCOME!!! </h2>
+		 <div class="quotes " >
+		<q style="color: white;">The most imporatant thing is to enjoy your life...to be happy...it's all that matter</q><br>
+		-AudreyHepbum
+	</div>
+	</div>
+	<div class="section">
+		<img src="pic/pic19.gif" class="img">
+		<h1 style="color:white;font-family: cursive;padding-bottom:10px;text-align: center;font-size: 40px;">Some Tips For Self-Devlopment</h1><hr style="margin-bottom: 35px;">
+		<div class="border">
+
+		<div class="list">
+			<li >Devlope a positive thinking!</li><br>
+			<li >Understand what makes you feel great!</li><br>
+			<li >Feel Gratefull Every moment and every second!</li><br>
+			<li >recognise the things that get you down!</li><br>
+			<li >Set goal to achieve what you want!
+			</li><br>
+			<li >Dont be afraid for small or big thing,have a confident for overcome any situation</li><br>
+			<li>Stand up for youe belief and values!</li><br>
+			<li >Take responsibility of your own action!</li><br>
+			<li>Have a comppasion and help someone!</li><br>
+			<li>Learn something new</li><br>
+			<li>Pick up a new habit.</li><br>
+			<li >Keep Going & NEVER Give Up</li>
+		</div>
+		</div>
+	</div>
+	<div class="section1">
+		 <h1 style="text-align: center;color: white;padding-top: 10px;">Specially For You</h1>
+        <video controls class="vid" >
+                <source src="vid.mp4" type="video/mp4">
+          </video>        
+        <div class="vid-container">
+                <div class="h4" >
+                    <h4 style="padding-top: 35%;text-align: center;color: white;">This is video is so critical thank you...</h4>
+                    <div class="fonts">
+               <a  ><i class="fa fa-plays"></i></a>
+               <a  ><i class="fa fa-thumbs-up" aria-hidden="true" style="padding: 10px;"></i></a>
+               <a  ><i class="fa fa-thumbs-down" aria-hidden="true" style="padding: 10px;"></i></a>
+                <a ><i class="fa fa-download" aria-hidden="true" style="padding: 10px;"></i></a>
+                </div>
+     </div>
+        
+    </div>
+    <div class="pic" >
+       <audio controls="controls" autoplay="autoplay">
+       	<source src="mus.mp3" type="audio/mp3">
+       </audio>
+     </div>
+        <div class="vid-container">
+                <div class="h5" >
+                    <h4 style="padding-top: 35%;text-align: center;color: white;">This is video is so critical thank you...</h4>
+                    <div class="fonts">
+               <a  ><i class="fa fa-music"></i></a>
+               <a  ><i class="fa fa-thumbs-up" aria-hidden="true" style="padding: 10px;"></i></a>
+               <a  ><i class="fa fa-thumbs-down" aria-hidden="true" style="padding: 10px;"></i></a>
+                <a ><i class="fa fa-download" aria-hidden="true" style="padding: 10px;"></i></a>
+                </div>
+                </div>
+	</div>
+</div>
+<div class="section2">
+		 <div class="title2">Make You Better!!!</div>
+		 <div class="sub-container">
+		 <div class="left-side0">
+			<h1 >Self Motivation<hr></h1>
+			<img src="pic/pic002.gif" width="300" height="250">
+		</div>
+		<div class="right-side0 ">
+				<p uk-margin>
+    <a class="uk-button uk-button-default" style="background-color:rgb(6, 60, 30);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >Powerfull ways to Master Self-Descilpine</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(6, 61, 59);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >How to be more adaptable</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(45,24,33);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >boost self-confidence</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(20,24,43);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >living with purpose</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(1, 42, 66);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >best way to stay motivated while starting a new venture</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(109, 31, 6  );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >powerfull way to overcome self-doubte</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(109, 6, 40  );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >being alone is a skill</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(68, 3, 68    );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >10 ways to feel better about yourself</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(7, 13, 76  );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >deal with rejection</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(4, 21, 40    );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >how to bring inner peace into your life</a>
+    <a class="uk-button uk-button-default" href="#modal-group-2" uk-toggle>Modal 2</a>
+</p>
+
+<div id="modal-group-1" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title">Headline 1</h2>
+        </div>
+        <div class="uk-modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        
+        </div>
+        <div class="uk-modal-footer uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <a href="#modal-group-2" class="uk-button uk-button-primary" uk-toggle>Next</a>
+        </div>
+    </div>
+</div>
+
+<div id="modal-group-2" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title">Headline 2</h2>
+        </div>
+        <div class="uk-modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="uk-modal-footer uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <a href="#modal-group-1" class="uk-button uk-button-primary" uk-toggle>Previous</a>
+        </div>
+    </div>
+</div>
+		</div>
+		<div class="left-side2">
+				<p uk-margin>
+    <a class="uk-button uk-button-default" style="background-color:rgb(6, 60, 30);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >the important of positive self-talk</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(6, 61, 59);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >calm down fast when you are angry</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(45,24,33);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >take care of your emotionally</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(20,24,43);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >there is more to life</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(1, 42, 66);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >3 steps to overcome frustration</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(109, 31, 6  );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >6 way to truly master your own mind</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(109, 6, 40  );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >changes to make when you feel a lack of energy and motivation</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(68, 3, 68    );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >1how to conquer fear of failure</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(7, 13, 76  );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >thinking like a child can change your life</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(4, 21, 40    );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >how to make changes to your life by changing your habits</a>
+   
+</p>
+
+
+<div id="modal-group-1" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title">Headline 1</h2>
+        </div>
+        <div class="uk-modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="uk-modal-footer uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <a href="#modal-group-2" class="uk-button uk-button-primary" uk-toggle>Next</a>
+        </div>
+    </div>
+</div>
+
+<div id="modal-group-2" uk-modal>
+    <div class="uk-modal-dialog" >
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title">Headline 2</h2>
+        </div>
+        <div class="uk-modal-body">
+            <p style="color: black;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="uk-modal-footer uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <a href="#modal-group-1" class="uk-button uk-button-primary" uk-toggle>Previous</a>
+        </div>
+    </div>
+</div>
+		</div>
+		<div class="left-side0">
+			<h1>Introspection<hr></h1>
+			<img src="pic/pic006.png" style="width: 300px; height: 220px;">
+		</div>
+		<div class="left-side0">
+			<h1>Goal Setting<hr></h1>
+			<img src="pic/pic1.png" style="width: 300px; height: 220px;">
+		</div>
+		<div class="right-side0">
+				<p uk-margin>
+    <a class="uk-button uk-button-default" style="background-color:rgb(6, 60, 30);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >set future goals</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(6, 61, 59);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >how top performers never let a second go to waste</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(45,24,33);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >how to maintain the willpower to ahive your goal</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(20,24,43);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >the scales method</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(1, 42, 66);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >use the 80/20 rule for goal setting</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(68, 3, 68    );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >how to manage a heavy workload at work</a>
+
+    <a class="uk-button uk-button-default" style="background-color:rgb(109, 31, 6  );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >learn new skill fast</a>
+     <a class="uk-button uk-button-default" style="background-color:rgb(6, 60, 30);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >8 way to maintain work life blance</a>
+    
+</p>
+
+
+<div id="modal-group-1" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title">Headline 1</h2>
+        </div>
+        <div class="uk-modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="uk-modal-footer uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <a href="#modal-group-2" class="uk-button uk-button-primary" uk-toggle>Next</a>
+        </div>
+    </div>
+</div>
+
+<div id="modal-group-2" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title">Headline 2</h2>
+        </div>
+        <div class="uk-modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="uk-modal-footer uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <a href="#modal-group-1" class="uk-button uk-button-primary" uk-toggle>Previous</a>
+        </div>
+    </div>
+</div>
+		</div>
+		<div class="left-side2">
+				<p uk-margin>
+     <a class="uk-button uk-button-default" style="background-color:rgb(4, 21, 40    );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >11 morning routine to help you start a freshs</a>
+    
+    <a class="uk-button uk-button-default" style="background-color:rgb(6, 61, 59);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >how to handle unexpected situations gracefully</a>
+    
+
+    <a class="uk-button uk-button-default" style="background-color:rgb(20,24,43);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >buld a bedtime routine</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(109, 6, 40  );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >want to be successfull?do these 7 things in your spare time</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(7, 13, 76  );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >how to make yourself stick to a habit</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(4, 21, 40    );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >effictive ways to make learning a habits</a>
+  
+</p>
+
+
+<div id="modal-group-1" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title">Headline 1</h2>
+        </div>
+        <div class="uk-modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="uk-modal-footer uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <a href="#modal-group-2" class="uk-button uk-button-primary" uk-toggle>Next</a>
+        </div>
+    </div>
+</div>
+
+<div id="modal-group-2" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title">Headline 2</h2>
+        </div>
+        <div class="uk-modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="uk-modal-footer uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <a href="#modal-group-1" class="uk-button uk-button-primary" uk-toggle>Previous</a>
+        </div>
+    </div>
+</div>
+		</div>
+		<div class="left-side0">
+			<h1>Habit Bulding<hr></h1>
+			<img src="pic/pic009.png" style="width: 300px; height: 220px;">
+		</div>
+		<div class="left-side0">
+			<h1>Lifestyle Choices<hr></h1>
+			<img src="pic/ani.png" style="width: 300px; height: 220px;">
+		</div>
+		<div class="right-side0">
+				<p uk-margin>
+    <a class="uk-button uk-button-default" style="background-color:rgb(6, 60, 30);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >6 ways to improve self control</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(6, 61, 59);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >make your weeken productive</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(20,24,43);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >8 ways to reduce anxiety when life is strass you out</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(1, 42, 66);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >how to concentrate and train your brain to focus better</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(109, 6, 40  );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >steps to becoming more adptable to change</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(68, 3, 68    );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >small changes that can have a big impact on your energy</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(7, 13, 76  );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >way to improve your mood when your feeling down</a>
+   
+   
+</p>
+
+
+<div id="modal-group-1" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title">Headline 1</h2>
+        </div>
+        <div class="uk-modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="uk-modal-footer uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <a href="#modal-group-2" class="uk-button uk-button-primary" uk-toggle>Next</a>
+        </div>
+    </div>
+</div>
+
+<div id="modal-group-2" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title">Headline 2</h2>
+        </div>
+        <div class="uk-modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="uk-modal-footer uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <a href="#modal-group-1" class="uk-button uk-button-primary" uk-toggle>Previous</a>
+        </div>
+    </div>
+</div>
+		</div>
+		<div class="left-side2">
+				<p uk-margin>
+    <a class="uk-button uk-button-default" style="background-color:rgb(6, 60, 30);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >Powerfull ways to Master Self-Descilpine</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(6, 61, 59);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >How to be more adaptable</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(45,24,33);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >boost self-confidence</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(20,24,43);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >living with purpose</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(1, 42, 66);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >best way to stay motivated while starting a new venture</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(109, 31, 6  );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >powerfull way to overcome self-doubte</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(109, 6, 40  );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >being alone is a skill</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(68, 3, 68    );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >10 ways to feel better about yourself</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(7, 13, 76  );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >d</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(4, 21, 40    );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >how to bring inner peace into your life</a>
+   
+</p>
+
+
+<div id="modal-group-1" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title">Headline 1</h2>
+        </div>
+        <div class="uk-modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="uk-modal-footer uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <a href="#modal-group-2" class="uk-button uk-button-primary" uk-toggle>Next</a>
+        </div>
+    </div>
+</div>
+
+<div id="modal-group-2" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title">Headline 2</h2>
+        </div>
+        <div class="uk-modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="uk-modal-footer uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <a href="#modal-group-1" class="uk-button uk-button-primary" uk-toggle>Previous</a>
+        </div>
+    </div>
+</div>
+		</div>
+		<div class="left-side0">
+			<h1>Career Life<hr></h1>
+			<img src="pic/ani0.png" style="width: 300px; height: 220px;">
+		</div>
+		<div class="left-side0">
+			<h1>Relationship<hr></h1>
+			<img src="pic/ani2.png" style="width: 300px; height: 220px;">
+		</div>
+		<div class="right-side0">
+			
+				<p uk-margin>
+    <a class="uk-button uk-button-default" style="background-color:rgb(6, 60, 30);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >Powerfull ways to Master Self-Descilpine</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(6, 61, 59);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >How to be more adaptable</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(45,24,33);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >boost self-confidence</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(20,24,43);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >living with purpose</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(1, 42, 66);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >best way to stay motivated while starting a new venture</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(109, 31, 6  );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >powerfull way to overcome self-doubte</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(109, 6, 40  );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >being alone is a skill</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(68, 3, 68    );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >10 ways to feel better about yourself</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(7, 13, 76  );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >deal with rejection</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(4, 21, 40    );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >how to bring inner peace into your life</a>
+    <a class="uk-button uk-button-default" href="#modal-group-2" uk-toggle>Modal 2</a>
+</p>
+
+
+<div id="modal-group-1" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title">Headline 1</h2>
+        </div>
+        <div class="uk-modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="uk-modal-footer uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <a href="#modal-group-2" class="uk-button uk-button-primary" uk-toggle>Next</a>
+        </div>
+    </div>
+</div>
+
+<div id="modal-group-2" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title">Headline 2</h2>
+        </div>
+        <div class="uk-modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="uk-modal-footer uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <a href="#modal-group-1" class="uk-button uk-button-primary" uk-toggle>Previous</a>
+        </div>
+    </div>
+</div>
+		</div>
+		
+		
+		<div class="right-side0">
+			<p uk-margin>
+    <a class="uk-button uk-button-default" style="background-color:rgb(6, 60, 30);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >Powerfull ways to Master Self-Descilpine</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(6, 61, 59);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >How to be more adaptable</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(45,24,33);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >boost self-confidence</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(20,24,43);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >living with purpose</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(1, 42, 66);border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >best way to stay motivated while starting a new venture</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(109, 31, 6  );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >powerfull way to overcome self-doubte</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(109, 6, 40  );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >being alone is a skill</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(68, 3, 68    );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >10 ways to feel better about yourself</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(7, 13, 76  );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >deal with rejection</a>
+    <a class="uk-button uk-button-default" style="background-color:rgb(4, 21, 40    );border-radius: 60px;color: white;" href="#modal-group-1" uk-toggle >how to bring inner peace into your life</a>
+    <a class="uk-button uk-button-default" href="#modal-group-2" uk-toggle>Modal 2</a>
+</p>
+
+
+<div id="modal-group-1" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title">Headline 1</h2>
+        </div>
+        <div class="uk-modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="uk-modal-footer uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <a href="#modal-group-2" class="uk-button uk-button-primary" uk-toggle>Next</a>
+        </div>
+    </div>
+</div>
+
+<div id="modal-group-2" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title">Headline 2</h2>
+        </div>
+        <div class="uk-modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="uk-modal-footer uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <a href="#modal-group-1" class="uk-button uk-button-primary" uk-toggle>Previous</a>
+        </div>
+    </div>
+</div>
+		</div>
+		<div class="left-side0">
+			<h1>Communication Skill<hr></h1>
+			<img src="pic/ani02.jpeg" style="width: 300px; height: 220px;">
+		</div>
+</div></div>	
+<div class="section3">
+	<h1 style="padding-bottom: 30px;text-align: center;font-size: 30px;font-family: monospace;color: white;">Quotation By Author</h1></center>
+        <div class="slideshow-container">
+
+  <!-- Full-width slides/quotes -->
+  <div class="mySlides bounceIn animated">
+   <img src="images/author.jpg" style="width: 100px;height: 100px;border-radius: 60px;position: absolute;top: 0.5pc;left: 47%;">
+   <div class="img-container">
+       <h4 style="width: 300px;margin: auto;padding-top: 10%; color: white;">"As much as I converse with sages and heroes, they have very little of my love and admiration. I long for rural and domestic scene, for the warbling of birds and the prattling of my children" </h4>
+   </div>
+  </div>
+
+  <div class="mySlides bounceIn animated">
+     <img src="images/img2.jpg" style="width: 100px;height: 100px;border-radius: 60px;position: absolute;top: 0.5pc;left: 47%;">
+      <div class="img-container">
+          <h4 style="width: 300px;margin: auto;padding-top: 10%; color: white;">“Knowing others is intelligence; knowing yourself is true wisdom. Mastering others is strength; mastering yourself is true power.”
+            <i>Lao Tzu – Tao Te Ching</i></h4>
+      </div>
+  </div>
+
+  <div class="mySlides bounceIn animated">
+     <img src="images/img3.jpg"style="width: 100px;height: 100px;border-radius: 60px;position: absolute;top: 0.5pc;left: 47%;">
+      <div class="img-container">
+           <h4 style="width: 300px;margin: auto;padding-top: 10%; color: white;">“Knowing others is intelligence; knowing yourself is true wisdom. Mastering others is strength; mastering yourself is true power.”
+            <i>Lao Tzu – Tao Te Ching</i></h4>
+      </div>
+  </div>
+  <div class="mySlides bounceIn animated">
+     <img src="images/img4.jpg" style="width: 100px;height: 100px;border-radius: 60px;position: absolute;top: 0.5pc;left: 47%;">
+      <div class="img-container">
+           <h4 style="width: 300px;margin: auto;padding-top: 10%; color: white;">“Knowing others is intelligence; knowing yourself is true wisdom. Mastering others is strength; mastering yourself is true power.”
+            <i>Lao Tzu – Tao Te Ching</i></h4>
+      </div>
+  </div>
+  <div class="mySlides bounceIn animated">
+     <img src="images/img5.jpg" style="width: 100px;height: 100px;border-radius: 60px;position: absolute;top: 0.5pc;left: 47%;">
+      <div class="img-container">
+           <h4 style="width: 300px;margin: auto;padding-top: 10%; color: white;">“Knowing others is intelligence; knowing yourself is true wisdom. Mastering others is strength; mastering yourself is true power.”
+            <i>Lao Tzu – Tao Te Ching</i></h4>
+      </div>
+  </div>
+  <div class="mySlides bounceIn animated">
+     <img src="images/img6.jpg" style="width: 100px;height: 100px;border-radius: 60px;position: absolute;top: 0.5pc;left: 47%;">
+      <div class="img-container">
+           <h4 style="width: 300px;margin: auto;padding-top: 10%; color: white;">“Knowing others is intelligence; knowing yourself is true wisdom. Mastering others is strength; mastering yourself is true power.”
+            <i>Lao Tzu – Tao Te Ching</i></h4>
+      </div>
+  </div>
+<div class="mySlides bounceIn animated">
+     <img src="images/img7.jpg" style="width: 100px;height: 100px;border-radius: 60px;position: absolute;top: 0.5pc;left: 47%;">
+      <div class="img-container">
+           <h4 style="width: 300px;margin: auto;padding-top: 10%; color: white;">“Knowing others is intelligence; knowing yourself is true wisdom. Mastering others is strength; mastering yourself is true power.”
+            <i>Lao Tzu – Tao Te Ching</i></h4>
+      </div>
+  </div>
+  <div class="mySlides bounceIn animated">
+     <img src="images/img8.jpg"style="width: 100px;height: 100px;border-radius: 60px;position: absolute;top: 0.5pc;left: 47%;">
+      <div class="img-container">
+           <h4 style="width: 300px;margin: auto;padding-top: 10%; color: white;">“Knowing others is intelligence; knowing yourself is true wisdom. Mastering others is strength; mastering yourself is true power.”
+            <i>Lao Tzu – Tao Te Ching</i></h4>
+      </div>
+  </div>
+  <div class="mySlides bounceIn animated">
+     <img src="images/img9.jpg" style="width: 100px;height: 100px;border-radius: 60px;position: absolute;top: 0.5pc;left: 47%;">
+      <div class="img-container">  <h4 style="width: 300px;margin: auto;padding-top: 10%; color: white;">“Knowing others is intelligence; knowing yourself is true wisdom. Mastering others is strength; mastering yourself is true power.”
+            <i>Lao Tzu – Tao Te Ching</i></h4></div>
+  </div>
+  <div class="mySlides bounceIn animated">
+     <img src="images/img10.jpg" style="width: 100px;height: 100px;border-radius: 60px;position: absolute;top: 0.5pc;left: 47%;">
+      <div class="img-container"> <h4 style="width: 300px;margin: auto;padding-top: 10%; color: white;">“Knowing others is intelligence; knowing yourself is true wisdom. Mastering others is strength; mastering yourself is true power.”
+            <i>Lao Tzu – Tao Te Ching</i></h4></div>
+  </div>
+  <div class="mySlides bounceIn animated">
+     <img src="images/img11.jpg" style="width: 100px;height: 100px;border-radius: 60px;position: absolute;top: 0.5pc;left: 47%;">
+      <div class="img-container"> <h4 style="width: 300px;margin: auto;padding-top: 10%; color: white;">“Knowing others is intelligence; knowing yourself is true wisdom. Mastering others is strength; mastering yourself is true power.”
+            <i>Lao Tzu – Tao Te Ching</i></h4></div>
+  </div>
+  <div class="mySlides bounceIn animated">
+     <img src="images/img12.jpg" style="width: 100px;height: 100px;border-radius: 60px;position: absolute;top: 0.5pc;left: 47%;">
+      <div class="img-container"> <h4 style="width: 300px;margin: auto;padding-top: 10%; color: white;">“Knowing others is intelligence; knowing yourself is true wisdom. Mastering others is strength; mastering yourself is true power.”
+            <i>Lao Tzu – Tao Te Ching</i></h4></div>
+  </div>
+  <!-- Next/prev buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<div class="dot-container">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+</div>
+<div class="section4">
+	<h1 style="text-align: center;color: white;font-family: monospace;padding: 20px;">Drop Comment&Like Here...</h1>
+	<div class="mas-border">
+		<div class="meli">
+	        <div class="mess-box">
+			<br>
+			<textarea class="mess" placeholder="Enter Comment.."></textarea><br>
+			<input type="button" name="send" value="send" class="text1">
+	        </div>
+	        <div class="like-box">
+	       <input type="checkbox" id="like"/>
+<label for="like">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M12 21.35l-1.45-1.32c-5.15-4.67-8.55-7.75-8.55-11.53 0-3.08 2.42-5.5 5.5-5.5 1.74 0 3.41.81 4.5 2.09 1.09-1.28 2.76-2.09 4.5-2.09 3.08 0 5.5 2.42 5.5 5.5 0 3.78-3.4 6.86-8.55 11.54l-1.45 1.31z"/>
+</svg>
+</label>
+ </div></div>
+	        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.3.js"></script>
+	    </div>    
+	</div>
+<div class="section5">
+	<div class="right-quote">
+		<q>hdbvkgbv,fudhb.dltijyoi</q>
+	</div>
+	<div class="down-text">
+		<h2  data-text="THANK YOU!!! "> THANK YOU!!! </h2>
+	</div>
+</div>
+	</div>
+<script type="text/javascript">
+var myAudio = document.getElementById("myAudio");
+var isPlaying = false;
+
+function togglePlay() {
+  if (isPlaying) {
+    myAudio.pause()
+  } else {
+    myAudio.play();
+  }
+};
+myAudio.onplaying = function() {
+  isPlaying = true;
+};
+myAudio.onpause = function() {
+  isPlaying = false;
+};</script>
+<script type="text/javascript">
+    var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1} 
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
+}
+</script>
+<script type="text/javascript" href="uikit.js"></script>
+<script type="text/javascript" href="uikit.min.js"></script>
+<script type="text/javascript" href="uikit-icons.js"></script>
+<script type="text/javascript" href="uikit-icons.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+</html>

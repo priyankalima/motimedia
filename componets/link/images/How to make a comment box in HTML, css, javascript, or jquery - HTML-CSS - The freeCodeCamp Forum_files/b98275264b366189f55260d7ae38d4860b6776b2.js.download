@@ -1,0 +1,125 @@
+(function() {
+  if ('Discourse' in window && Discourse.__container__) {
+    Discourse.__container__
+      .lookup("service:theme-settings")
+      .registerSettings(18, {"disable_at_trust_level":3,"matches_to_ignore":0,"include_html":true});
+  }
+})();
+(function() {
+  if ('Ember' in window) {
+    Ember.TEMPLATES["modal/ucd-warning-modal"] = Ember.HTMLBars.template({"id":null,"block":"{\"symbols\":[],\"statements\":[[0,\"\\n\"],[4,\"d-modal-body\",null,[[\"title\"],[[29,\"theme-prefix\",[18,\"warning_modal.title\"],null]]],{\"statements\":[[0,\"    \"],[1,[29,\"cook-text\",[[29,\"theme-i18n\",[18,\"warning_modal.content\"],null]],null],false],[0,\"\\n    \"],[7,\"label\"],[11,\"for\",\"ucd_do-not-show-again\"],[11,\"class\",\"checkbox-label\"],[9],[0,\"\\n      \"],[1,[29,\"input\",null,[[\"type\",\"id\",\"name\",\"checked\"],[\"checkbox\",\"ucd_do-not-show-again\",\"ucd_do-not-show-again\",[25,[\"model\",\"ucd_shouldPermanentlyDismiss\"]]]]],false],[0,\"\\n      \"],[1,[29,\"theme-i18n\",[18,\"warning_modal.do_not_show_again\"],null],false],[0,\"\\n    \"],[10],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"action-buttons\"],[9],[0,\"\\n\"],[0,\"      \"],[1,[29,\"d-button\",null,[[\"action\",\"icon\",\"tagName\",\"class\",\"label\"],[[29,\"action\",[[24,0,[]],\"goBackAndFix\"],null],\"pencil-alt\",\"button\",\"btn-primary\",[29,\"theme-prefix\",[18,\"warning_modal.fix_post\"],null]]]],false],[0,\"\\n      \"],[1,[29,\"d-button\",null,[[\"action\",\"tagName\",\"class\",\"label\"],[[29,\"action\",[[24,0,[]],\"ignoreAndProceed\"],null],\"button\",\"btn-danger\",[29,\"theme-prefix\",[18,\"warning_modal.ignore_and_post_anyway\"],null]]]],false],[0,\"\\n    \"],[10],[0,\"\\n\"]],\"parameters\":[]},null]],\"hasEval\":false}","meta":{}});
+  }
+})();
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+(function () {
+  if ('Discourse' in window && typeof Discourse._registerPluginCode === 'function') {
+    var __theme_name__ = "Unformatted Code Detector";
+    var settings = Discourse.__container__.lookup("service:theme-settings").getObjectForTheme(18);
+    var themePrefix = function themePrefix(key) {
+      return 'theme_translations.18.' + key;
+    };
+
+    Discourse._registerPluginCode('0.8', function (api) {
+      try {
+
+        /*
+          This is an automatically generated file.
+          Please make changes in the relevant /src files instead.
+        */
+
+        !function (e) {
+          var t = {};function r(n) {
+            if (t[n]) return t[n].exports;var o = t[n] = { i: n, l: !1, exports: {} };return e[n].call(o.exports, o, o.exports, r), o.l = !0, o.exports;
+          }r.m = e, r.c = t, r.d = function (e, t, n) {
+            r.o(e, t) || Object.defineProperty(e, t, { enumerable: !0, get: n });
+          }, r.r = function (e) {
+            "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e, "__esModule", { value: !0 });
+          }, r.t = function (e, t) {
+            if (1 & t && (e = r(e)), 8 & t) return e;if (4 & t && "object" == (typeof e === 'undefined' ? 'undefined' : _typeof(e)) && e && e.__esModule) return e;var n = Object.create(null);if (r.r(n), Object.defineProperty(n, "default", { enumerable: !0, value: e }), 2 & t && "string" != typeof e) for (var o in e) {
+              r.d(n, o, function (t) {
+                return e[t];
+              }.bind(null, o));
+            }return n;
+          }, r.n = function (e) {
+            var t = e && e.__esModule ? function () {
+              return e.default;
+            } : function () {
+              return e;
+            };return r.d(t, "a", t), t;
+          }, r.o = function (e, t) {
+            return Object.prototype.hasOwnProperty.call(e, t);
+          }, r.p = "", r(r.s = 0);
+        }([function (module, exports, __webpack_require__) {
+          var _require = eval("require"),
+              showModal = _require("discourse/lib/show-modal").default,
+              _webpack_require__ = __webpack_require__(1),
+              detectUnformattedCode = _webpack_require__.detectUnformattedCode,
+              disableAtTrustLevel = ~settings.disable_at_trust_level ? settings.disable_at_trust_level : 1 / 0;api.modifyClass("model:composer", { ucd_shouldPermanentlyDismiss: !1, ucd_checkPermanentlyDismissed: function ucd_checkPermanentlyDismissed() {
+              return !!localStorage.ucd_warningPermanentlyDismissed;
+            }, ucd_checkShouldIgnoreWarning: function ucd_checkShouldIgnoreWarning() {
+              return !localStorage.ucd_forceShowWarning && (this.ucd_previousWarningIgnored || this.ucd_checkPermanentlyDismissed() || api.getCurrentUser().trust_level >= disableAtTrustLevel);
+            },
+            ucd_checkUnformattedCodeDetected: function ucd_checkUnformattedCodeDetected() {
+              return detectUnformattedCode(this.reply);
+            }
+          }), api.modifyClass("controller:composer", {
+            ucd_permanentlyDismiss: function ucd_permanentlyDismiss() {
+              localStorage.ucd_warningPermanentlyDismissed = "1";
+            },
+            ucd_closeModal: function ucd_closeModal() {
+              this.model.ucd_shouldPermanentlyDismiss && this.ucd_permanentlyDismiss(), this.send("closeModal");
+            },
+            save: function save() {
+              for (var _len = arguments.length, e = Array(_len), _key = 0; _key < _len; _key++) {
+                e[_key] = arguments[_key];
+              }
+
+              var t = this.model,
+                  r = this,
+                  n = this._super;if (t.ucd_checkUnformattedCodeDetected() && !t.ucd_checkShouldIgnoreWarning()) {
+                var o = showModal("ucdWarningModal", { modalClass: "ucd_warning-modal", model: t });o.actions.ignoreAndProceed = function () {
+                  r.ucd_closeModal.call(r), n.call.apply(n, [r].concat(_toConsumableArray(e)));
+                }, o.actions.goBackAndFix = function () {
+                  return r.ucd_closeModal.call(r);
+                };
+              } else this._super.apply(this, _toConsumableArray(e));
+            }
+          });
+        }, function (e, t, r) {
+          var _r = r(2),
+              n = _r.stripIgnoredContent,
+              o = "[$_a-zA-Z][$_a-zA-Z0-9]*",
+              s = '(?:' + o + '|(?:"(?:[^\\r\\n"\\\\]|\\\\[^\\r\\n])*"|\'(?:[^\\r\\n\'\\\\]|\\\\[^\\r\\n])*\')|-?(?:0|[1-9]\\d*)(?:\\.\\d+)?(?:[eE][+-]?\\d+)?)',
+              a = ['\\$' + o, "^\\s*\\.[a-zA-Z-]+", ':' + o, "[$a-zA-Z][$_a-zA-Z0-9]*(?:_[$a-zA-Z][$_a-zA-Z0-9]*)+", "(?:^|\\s+)(?:\\/\\/|;)", "\\/\\*[\\s\\S]+?\\*\\/", "('''|\"\"\")[\\s\\S]+?\\1", ";\\s*$", '(?:' + o + ')?[$_a-z]\\(' + ('(?:\\s*' + s + '\\s*(?:,\\s*' + s + '\\s*)*|\\s*)') + '\\)', o + '\\[\\s*' + s + '?\\s*\\]', "^\\s*[{}]\\s*$", "\\{\\{.+\\}\\}", "[\\$#]\\{.+\\}", "&&|!=|>>|<<|::|\\+=|-=|\\*=|\\/=|\\|\\|=|\\?=|\\.\\?", "\\\\['\"ntr0\\\\]", "<\\?[^>]*\\?>", "<%[^>]*%>"],
+              c = ["\x3c!--[\\s\\S]*?--\x3e", "<[a-zA-Z-]+[^>]*\\/?>", "</[a-zA-Z-]+>", "&[0-9a-zA-Z]+;", "&#[0-9]{1,7};", "&#x[0-9a-fA-F]{1,6};"],
+              d = settings.include_html,
+              l = settings.matches_to_ignore,
+              i = a.concat(d ? c : []).map(function (e) {
+            return new RegExp(e, "gm");
+          });
+
+          e.exports = { detectUnformattedCode: function detectUnformattedCode(e) {
+              return function (e) {
+                var t = 0;for (var _r2 = 0; _r2 < i.length; _r2++) {
+                  var _n = i[_r2],
+                      _o = e.match(_n);if (_o && (t += _o.length), t > l) return !0;
+                }return !1;
+              }(n(e));
+            } };
+        }, function (e, t) {
+          e.exports = { stripIgnoredContent: function stripIgnoredContent(e) {
+              return [/(^([`~])\2{2,})[^`~\r\n]*\r?\n[\s\S]*?\r?\n\1\2*\s*(?:\r?\n|$)/gm, /(?:^|(?:\r?\n{2,}))\s*(?:(?: {4}|\t).*(?:\r?\n|$))/g, /`[^`\r\n]+`/g, /\[([a-z]+).*?\][\s\S]*?\[\/\1\]/gim, /:[a-z_0-9+-]+:/g, /https?:\/\/(_\([^() \r\n\t]+\)|[^() \r\n\t])+/g, /\((?:c|tm|r)\)/gi].reduce(function (e, t) {
+                return e.replace(t, "");
+              }, e);
+            } };
+        }]);
+      } catch (err) {
+        var rescue = require("discourse/lib/utilities").rescueThemeError;
+        rescue(__theme_name__, err, api);
+      }
+    });
+  }
+})();

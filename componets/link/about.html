@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>about</title>
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+			background-color: rgb(35,44,65);
+			overflow-x: hidden;
+		}
+		.container{
+			width: 1000px;
+			margin: auto;
+		}
+		h1,h4{
+			text-align: center;
+			font-family: cursive;
+			font-size: 30px;
+			color: white;
+			padding: 10px;
+			padding: 30px;
+			border-radius:  0 0 30pc 30pc ;
+			background-color: rgb(34,34,85);
+		}
+		p{
+			width: 850px;
+			margin: auto;
+			color: white;
+			font-family: cursive;
+			padding: 10px  10px 10px 0; 
+		}
+		.about{
+			height: 70vh;
+			background-color: rgb(34,34,85);
+			box-shadow: 0 0 20px -10px;
+		}
+		.about:hover{
+			background-image:linear-gradient(rgba(34,34,85,0.9),rgba(34,34,85,0.9)) ,url(images/back2.jpg);
+			background-position: center top;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.content{
+			height: 90vh;
+			background-color: rgb(34,34,85);
+			box-shadow: 0 0 20px -10px;
+		}
+		.content:hover{
+			background-image: linear-gradient(rgba(34,34,85,0.9),rgba(34,34,85,0.9)),url(images/back.jpg);
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.left{
+			width: 40%;
+			float: left;
+			
+			margin-left: 80px;
+		}
+		.right{
+			width: 40%;
+			float: left;
+			
+			margin-left: 80px;
+		}
+		.rate1{
+			height: 70vh;
+			background-color: rgb(34,34,85);
+			box-shadow: 0 0 20px -10px;
+		
+		}
+		.rate1:hover{
+			background-image: linear-gradient(rgba(34,34,85,0.9),rgba(34,34,85,0.9)),url(images/back7.jpg);
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		textarea{
+			width: 350px;
+			height: 100px;
+			border-radius: 10px;
+			border:none;
+			background-color:lightgrey;
+			color:black;
+		}
+		footer{
+			text-align: center;
+			font-size: 30px;
+			color: white;
+			font-family: cursive;
+			margin-top: 10%; 
+			padding: 20px;
+			background-color: rgb(34,43,34);
+		}
+		.submit{
+			width: 200px;
+			margin: auto;
+			margin-left: 40%;
+			margin-top: 5%;
+			padding: 10px;
+			border:none;
+			background-color: #444fff;
+			border-radius: 20px;
+		}
+		.rate-submit{
+			width: 200px;
+			margin: auto;
+			margin-left: 42%;
+			padding: 10px;
+			border:none;
+			background-color: #444;
+			border-radius: 20px;
+		}
+	.rate:not(:checked) > input {
+   clear: both;
+	display: none;
+   
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:100px;
+    color:#ccc;
+
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+.rate{
+	width: 500px;
+	margin: auto;
+	height: 30vh;
+	padding-top: 30px;
+}
+		
+	</style>
+</head>
+<body>
+	<div class="container"> 
+<section class="about">
+	<h1>Know About It</h1>
+	<p>Here some extra link to do something her so pls try to understand what is now today section so like it Here some extra link to do something her so pls try to understand what is now today section so like it Here some extra link to do something her so pls try to understand what is now today section so like it Here some extra link to do something her so pls try to understand what is now today section so like it Here some extra link to do something her so pls try to understand what is now today section so like it Here some extra link to do something her so pls try to understand what is now today section so like it Here some extra link to do something her so pls try to understand what is now today section so like it</p>
+	
+</section>
+<section class="content">
+	<h4>Answer It</h4>
+	<div class="left">
+	<p>How Have You Learnt Here???</p>
+	<textarea placeholder="enter your ans..."></textarea>
+	<p>How Have You Learnt Here???</p>
+	<textarea placeholder="enter your ans..."></textarea>
+</div>
+<div class="right">
+	<p>How Have You Learnt Here???</p>
+	<textarea placeholder="enter your ans..."></textarea>
+	<p>How Have You Learnt Here???</p>
+	<textarea placeholder="enter your ans..."></textarea>
+</div>
+<input type="submit" name="" value="Submit" class="submit">
+</section>
+<section class="rate1">
+	<h4>Rate It</h4>
+	  <div class="rate">
+    <input type="radio" id="star5" name="rate" value="5" />
+    <label for="star5" title="text">5 stars</label>
+    <input type="radio" id="star4" name="rate" value="4" />
+    <label for="star4" title="text">4 stars</label>
+    <input type="radio" id="star3" name="rate" value="3" />
+    <label for="star3" title="text">3 stars</label>
+    <input type="radio" id="star2" name="rate" value="2" />
+    <label for="star2" title="text">2 stars</label>
+    <input type="radio" id="star1" name="rate" value="1" />
+    <label for="star1" title="text">1 star</label>
+  </div>
+  <input type="submit" name="" value="Submit" class="rate-submit"> 
+</section>
+
+</div><footer>Thank you for the Love and Support</footer>
+</body>
+</html>

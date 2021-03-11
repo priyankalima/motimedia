@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quotations for success</title>
+	<link rel="stylesheet" type="text/css" href="animate.css">
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+			background-color:rgb(23,45,34);
+			
+		}
+		.content{
+			width: 700px;
+			height: 70vh;
+			background-color: rgb(34,56,43);
+			margin: auto;
+			border-radius:0 150px 0  150px ;
+			border:1px solid rgb(24,56,24);
+		}
+		.quote{
+			margin-top: 10pc;
+			font-family: monospace;
+			color: white;
+			font-size: 30px;
+			text-align: center;
+		}
+		.slideshow-container {
+  position:relative;
+top: 15%;
+  background:transparent;
+  color: white;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: rgb(24,56,24);
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 100px ;
+  user-select: none;
+  background-color: lightgrey;
+}
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 100px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color:grey;
+  color: rgb(34,56,43);
+}
+
+/* The dot/bullet/indicator container */
+
+
+/* Add a background color to the active dot/circle */
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+/* Add a blue color to the author */
+.author {color: cornflowerblue;}
+.container{
+	width: 1200px;
+	margin: auto;
+}
+.nav{
+	width: 500px;
+	margin: auto;
+	margin-top: 16px;
+	padding-left: 180px;
+}
+
+.link{
+	color: white;
+	text-decoration: none;
+	background-color: rgb(45,45,45);
+	padding: 10px;
+	margin: 10px;
+	border-radius: 60px;
+
+}
+.link:hover{
+	background-color: lightgrey;
+	color: rgb(45,45,45);
+}
+.left-link{
+	 overflow: hidden;
+  background-color: #555;
+  position: fixed; 
+  top: 0; 
+			padding: 10px;
+			padding-left: 20px;
+			width: 100px;
+			height: 100px;
+			border-radius:  0 0  200px 0;
+			color: white;
+}
+</style>
+</head>
+<body>
+	<a class="left-link" href="index.html"><i class="fa fa-home"></i></a>
+	<div class="container bounceInLeft animated">
+		<div class="nav">
+
+			<a class="link" href="motivation-quote.html">Motivational Quotes</a>
+			<a class="link" href="inspired-quote.html">Inspired Quotes</a>
+		</div>
+<div class="slideshow-container">
+
+  <!-- Full-width slides/quotes -->
+  <div class="mySlides">
+    <div class="content">
+<div class="quote bounceIn  animated">
+	<q>Be yourself,have ignorance and confidence</q>
+</div>
+</div>
+  </div>
+
+  <div class="mySlides">
+   <div class="content">
+<div class="quote bounceIn  animated">
+	<q>have ignorance and confidence</q>
+</div>
+</div>
+  </div>
+  <div class="mySlides">
+   <div class="content">
+<div class="quote bounceIn  animated">
+	<q>have ignorance and confidence,have ignorance and confidence,have ignorance and confidence</q>
+</div>
+</div>
+  </div>
+
+  <div class="mySlides">
+   <div class="content">
+<div class="quote bounceIn animated">
+	<q>Be yourself</q>
+</div>
+</div>
+  </div>
+
+  <!-- Next/prev buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+</div>
+
+<!-- Dots/bullets/indicators -->
+<div class="dot-container">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+<script type="text/javascript">
+	var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1} 
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+(function() {
+  if ('Discourse' in window && Discourse.__container__) {
+    Discourse.__container__
+      .lookup("service:theme-settings")
+      .registerSettings(11, {"immediate_reload":true});
+  }
+})();
+(function () {
+    if ('Discourse' in window && typeof Discourse._registerPluginCode === 'function') {
+        var __theme_name__ = "Hamburger Theme Selector";
+        var settings = Discourse.__container__.lookup("service:theme-settings").getObjectForTheme(11);
+        var themePrefix = function themePrefix(key) {
+            return 'theme_translations.11.' + key;
+        };
+
+        Discourse._registerPluginCode('0.8', function (api) {
+            try {
+
+                var h = require('virtual-dom').h;
+                var ajax = require('discourse/lib/ajax').ajax;
+
+                var themeSelector = require('discourse/lib/theme-selector');
+
+                api.createWidget("theme-selector", {
+                    buildKey: function buildKey(attrs) {
+                        return 'theme-selector';
+                    },
+
+                    defaultState: function defaultState() {
+                        return { currentThemeId: themeSelector.currentThemeId() };
+                    },
+                    click: function click(event) {
+                        var _this = this;
+
+                        var $target = $(event.target);
+                        var id = $target.data('id');
+                        var user = api.getCurrentUser();
+
+                        if (user) {
+                            user.findDetails().then(function (user) {
+                                seq = user.get("user_option.theme_key_seq");
+                                _this.setTheme(id, seq);
+                            });
+                        } else {
+                            this.setTheme(id);
+                        };
+
+                        return true;
+                    },
+                    setTheme: function setTheme(themeId) {
+                        var seq = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+
+                        themeSelector.setLocalTheme([themeId], seq);
+                        this.state.currentThemeId = themeId;
+                        if (settings.immediate_reload) {
+                            window.location.reload();
+                        } else {
+                            themeSelector.previewTheme([themeId]);
+                        }
+                        this.scheduleRerender();
+                    },
+                    themeHtml: function themeHtml(currentThemeId) {
+                        var themes = themeSelector.listThemes(this.site);
+                        if (themes && themes.length > 1) {
+                            return themes.map(function (theme) {
+                                var name = [theme.name];
+                                if (theme.id === currentThemeId) {
+                                    name.push('\xa0' + "*");
+                                }
+                                return h('li', { attributes: { "data-name": theme.name } }, h('a.widget-link', { attributes: { "data-id": theme.id } }, name));
+                            });
+                        }
+                    },
+                    html: function html(attrs, state) {
+                        var themeHtml = this.themeHtml(state.currentThemeId);
+                        if (themeHtml) {
+                            return [h('ul.menu-links.columned', themeHtml), h('.clearfix'), h('hr')];
+                        }
+                    }
+                });
+
+                api.decorateWidget('menu-links:before', function (helper) {
+                    if (helper.attrs.name === 'footer-links') {
+                        return [helper.widget.attach('theme-selector')];
+                    }
+                });
+            } catch (err) {
+                var rescue = require("discourse/lib/utilities").rescueThemeError;
+                rescue(__theme_name__, err, api);
+            }
+        });
+    }
+})();

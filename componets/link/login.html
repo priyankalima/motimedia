@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color:#555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding:14px 16px;
+  font-size: 17px;
+ width: 50%;
+ height: 70px;
+
+
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+ 
+  display: none;
+  width: 700px;
+  height: 400px;
+  margin: auto;
+  margin-right: 30%;
+   box-shadow: 0 0 20px;
+}
+
+#SignIn {background-color: transparent;
+}
+#SignUp {background-color: transparent;}
+body{
+    padding: 0;
+    margin: 0;
+    background-image: url(images/bac2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    
+  }
+  .container{
+    width: 700px;
+    margin: auto;
+    padding-top: 7%;
+
+  }
+  .login{
+    width: 40%;
+    float: left;
+  
+    margin: 10px;
+    margin-left: 17%;
+  color: white;
+    border-radius: 2px;
+  }
+  .signup{
+    width: 40%;
+    float: left;
+      margin: 10px;
+      margin-left: 17%;
+    
+        border-radius: 2px;
+  }
+  input{
+    width: 400px;
+    padding: 10px;
+    margin: 10px;
+    margin-left: 25px;
+    border:1px solid white;
+    background-color: transparent;
+    border-radius: 5px;
+    color: white;
+  }
+  h1{
+    text-align: center;
+    height: 30px;
+    
+  }
+  .input{
+  
+    height: 50vh;
+    padding-top: 30px;
+    border:none;
+  }
+  .button{
+    width: 200px;
+    margin-left: 45%;
+    margin-top: 5%;
+    background-color:rgb(45,45,45);
+    border:1px solid white;
+    color: white;
+  }
+  a{
+    color: white;
+    margin-left: 29px;
+    text-decoration: none;
+   
+    margin-top: 40px;
+  }.fa-google{
+    width: 200px;
+    background-color: red;
+    padding: 10px;
+    text-align: center;
+    color: white;
+  
+    margin: 5px 5px 5px 0;
+    border-radius: 10px;
+
+  }
+  .fa-facebook{
+    width: 200px;
+    background-color:blue;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    margin: 5px 5px 5px 0;
+    border-radius: 10px;
+    
+  }
+  .tab{
+    
+   box-shadow: 0 0 20px;
+    width: 700px;
+    height: 70px;
+  }
+
+.google{
+  width: 30%;
+  float: left;
+  
+}
+.facebook{
+   width: 30%;
+  float: left;
+ 
+ 
+}
+.soc-div{
+  width: 700px;
+  margin: auto;
+}
+.fa-lock{
+  padding-right: 20px;
+}
+.fa-edit{
+   padding-right: 20px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="tab">
+<button class="tablink" onclick="openPage('SignIn', this,'green' )" id="defaultOpen"><i class="fa fa-lock"></i>Sign In</button>
+<button class="tablink" onclick="openPage('SignUp', this,'blue' )"><i class="fa fa-edit"></i>Sign Up</button>
+</div>
+
+<div id="SignIn" class="tabcontent">
+
+ <div class="login">
+
+ <div class="input">
+
+<input type="text" name="name" placeholder="Enter your email"><br>
+<input type="password" name="name" placeholder="enter your password"><br>
+  <br>
+<a href="" style="font-family: monospace;">Forgot Password</a>
+<input type="button" name="" value="Sign In"  class="button">
+<br><br>
+<div class="soc-div">
+<div class="google"><a href="#"><i class="fa fa-google"></i></a></div>
+<div class="facebook">
+  <a  href="#"><i class="fa fa-facebook"></i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="SignUp" class="tabcontent">
+  <div class="signup">
+
+ <div class="input">
+<input type="text" name="name" placeholder="Enter your username">
+<input type="text" name="name" placeholder="Enter your email">
+<input type="password" name="name" placeholder="Enter your password">
+<input type="password" name="name" placeholder="Enter your confirm-password">
+<input type="button" name="" value="Sign Up" class="button">
+</div>
+</div>
+</div>
+</div>
+
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
